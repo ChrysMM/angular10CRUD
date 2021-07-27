@@ -24,6 +24,7 @@ ProductPrice: ['', Validators.required ]
 }
 
 
+
 ngOnInit() {
 this.route.params.subscribe(params => {
 this.ps.editProduct(params['id']).subscribe(res => {
@@ -31,10 +32,10 @@ this.product = res;
 });
 });
 }
-
 updateProduct(ProductName, ProductDescription, ProductPrice) {
   this.route.params.subscribe(params => {
-  this.ps.updateProduct(ProductName, ProductDescription, ProductPrice, params.id).subscribe((data) =>
-  this.router.navigate(['products'])
-  );
+  this.ps.updateProduct(ProductName, ProductDescription, ProductPrice, params.id).subscribe((data) => this.router.navigate(['products']));
+  });
   }
+
+}

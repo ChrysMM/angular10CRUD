@@ -24,7 +24,7 @@ export class ProductsService {
     getProducts() :Observable<Product[]> {
       return this.http.get<Product[]>(`${this.uri}`);
       }
-      
+
     editProduct(id): Observable<Product> {
       return this
       .http
@@ -40,6 +40,11 @@ export class ProductsService {
         };
         return this.http.put <Product> (`${this.uri} /${id}`, obj) ;
         }
+        deleteProduct(id) : Observable<Product>{
+          return this
+          .http
+          .get <Product> (`${this.uri}/${id}`);
+          }
 }
 
 
